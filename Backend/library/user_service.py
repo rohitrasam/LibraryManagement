@@ -21,13 +21,14 @@ def add_user(request: Request):
 
 def get_user(request: Request):
     try:
+        print(request)
         email = request.data['email']
         password = request.data['password']
         user = User.objects.get(email=email)
         if user.password != password:
-            return Response("Wrong password", status=status.HTTP_404_NOT_FOUND)
+            return Response(data="Wrong password", status=status.HTTP_404_NOT_FOUND)
             
         user = UserModelSerializer(user)
         return Response(user.data, status=status.HTTP_200_OK)
     except:
-        return Response('User not found', status=status.HTTP_404_NOT_FOUND)
+        return Response(data='User not found', status=status.HTTP_404_NOT_FOUND)

@@ -1,0 +1,78 @@
+<body>
+
+    <div >
+        <h1>
+            Sign Up 
+        </h1>
+    </div>
+
+    <form [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+        
+        <div>
+            <mat-form-field>
+                <mat-label>
+                    Name
+                </mat-label>
+                <input matInput 
+                formControlName="name" 
+                type="text"/>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>
+                    Email
+                </mat-label>
+                <input matInput 
+                formControlName="email"    
+                type="email"/>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <mat-label>
+                    Phone no.
+                </mat-label>
+                <input matInput 
+                formControlName="ph_no"    
+                type="text"/>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>
+                    Password
+                </mat-label>
+                <input matInput formControlName="newPassword" type="password"/>
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field>
+                <mat-label>
+                    Confirm password
+                </mat-label>
+                <input matInput formControlName="confirmPassword" type="password"/>
+            </mat-form-field>
+        </div>
+
+        
+        <div class="buttons-container">
+            <div class="submit-container">
+                <button
+                [ngClass]="updateForm.invalid ? 'disabled': 'submit'" 
+                [disabled]="updateForm.invalid" 
+                mat-raised-button 
+                type="submit">
+                    Create
+                </button>
+            </div>
+        </div>
+
+    </form>
+    
+</body>
+
+

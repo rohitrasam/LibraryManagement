@@ -1,0 +1,40 @@
+<body>
+
+    <div class="main-container">
+        <div class="login-container">
+            <h2 class="login">
+                HiFi Library
+            </h2>
+        </div>
+        
+        <div class="form-container">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-label>
+                        Email
+                    </mat-label>
+                    <input matInput formControlName="email" type="email"/>
+                </mat-form-field>
+                <mat-form-field >
+                    <mat-label>
+                        Password
+                    </mat-label>
+                    <input matInput formControlName=password type="password"/>
+                </mat-form-field>
+        
+                <div class="button-container">
+                    <div class="login-button-container">
+                        <button class="login-button" mat-raised-button type="submit">
+                            Login
+                        </button>
+                    </div>
+                    <div class="register-button-container">
+                        <button class="register-button" mat-raised-button (click)="goToRegister()" type="button">
+                            Sign Up
+                        </button>
+                    </div>
+                </div>                
+            </form>
+        </div>
+    </div>
+</body>

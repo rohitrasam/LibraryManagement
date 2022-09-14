@@ -1,0 +1,70 @@
+
+$cancel: crimson;
+$submit: dodgerblue;
+
+body{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+    h1{
+        padding: 50px 50px 0 50px;
+        margin: 0;
+    }
+
+    form{
+        color: black;
+        display: flex;
+        flex-direction: column;
+        padding: 50px
+    }
+
+    // mat-form-field{
+        
+        mat-label{
+            color: gray;
+            font-size: 15px;        
+        }
+        
+        input{
+            font-size: 20px
+        }
+    // }
+
+    .buttons-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .cancel-container{
+            padding-right: 30px;
+            .cancel{
+                background-color: $cancel;
+                &:hover{
+                    background-color: $cancel;
+                    box-shadow: 0 0 20px $cancel;
+                }
+            }
+        }
+
+
+        .submit-container{
+
+            .disabled {
+                background-color: $submit;
+            }
+            
+            .submit{
+                background-color: $submit;
+                &:hover{
+                    background-color: $submit;
+                    box-shadow: 0 0 20px $submit;
+                }
+            }
+        }
+    }
+}
+

@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {color: rgb(0, 0, 0);background-color: rgb(233, 234, 236); margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple{
+    background-color: rgb(11, 11, 11);
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-underline
+{
+    background-color: dodgerblue;
+}
+
+.mat-input-element{
+
+    caret-color: rgb(0, 0, 0);
+}
+
+.mat-placeholder-required{
+    color: crimson;
+}

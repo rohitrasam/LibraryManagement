@@ -1,0 +1,100 @@
+// @mixin labels {
+//     // label{
+//         color: crimson;
+//         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//         font-size: 15px;
+//         font-weight: bold;
+//     // }
+// }
+@mixin onHover($onHover, $textColor) {
+    &:hover{
+        color: $textColor;
+        background-color:$onHover;
+        box-shadow: 0 0 15px $onHover;
+    }
+}
+$boxShadow: whitesmoke;
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    
+    .main-container{
+        width: 30%;
+        padding: 45px;
+        border-radius: 10px;
+        border: 2px solid rgb(8, 8, 8);
+    
+    }
+
+    .login-container{
+        display: flex;
+        flex-direction: row;
+        .login{
+            font-size: 40px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+            color:black;
+        }
+    }
+
+    .form-container{
+        form{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            color: black;
+            
+            mat-label{
+                color: gray
+            }
+
+            // .email-container{
+            //     mat-label{
+            //         @include labels()
+            //     }
+            // }
+            
+            // .password-container {
+            //     mat-label{
+                    
+            //         @include labels()
+            //     }
+            // }
+                
+        }
+    }
+    
+    .button-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        // .login-button-container{
+            .login-button{
+
+                background-color: dodgerblue;;
+                @include onHover(rgb(63, 183, 20), aliceblue);
+            }
+
+            .register-button{
+                background-color: dodgerblue;
+                @include onHover(rgb(255, 183, 20), black)
+            }
+        // }
+    }
+    
+}
+
+// :host ::ng-deep .mat-form-field.mat-focused .mat-form-field-ripple{
+//     background-color: whitesmoke;
+// }
+// :host ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline
+// {
+//     background-color: dodgerblue;
+// }
+
+
