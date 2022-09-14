@@ -15,10 +15,12 @@ class User(models.Model):
 
 class Book(models.Model):
     id = models.AutoField(primary_key=True, auto_created=True, editable=False)
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     author = models.CharField(max_length=100)
     price = models.DecimalField(decimal_places=2, max_digits=10)
-    description = models.TextField(max_length=200)
+    description = models.TextField(max_length=200, default="")
+    image = models.TextField(default="")
+    quantity = models.IntegerField(default=0)
 
     def __str__(self) -> str:
         return f"{self.id}, {self.name}"

@@ -9,3 +9,8 @@ class UserModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'name', 'email', 'ph_no', 'isAdmin')
+
+class BookSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Book
+        fields = ('id', 'name', 'author', 'price', 'description', 'image', 'quantity')
