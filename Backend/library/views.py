@@ -23,10 +23,28 @@ def login(request: Request):
 def add_book(request: Request):
 
     res = create_book(request)
-    
     return Response(res.data, status=res.status_code)
 
 @api_view(['GET'])
 def get_books(request: Request):
-    res = get_all_books(request)
+
+    res = get_all_books()
+    return Response(res.data, status=res.status_code)
+
+@api_view(['GET'])
+def get_book(request: Request, id: int):
+    res = get_book_info(id)
+
+    return Response(res.data, status=res.status_code)
+
+@api_view(['PATCH'])
+def update_book(request: Request, id: int):
+
+    res = update_book_info(request, id)
+    return Response(res.data, status=res.status_code)
+
+@api_view(['DELETE'])
+def delete_book(request: Request, id: int):
+
+    res = remove_book(id)
     return Response(res.data, status=res.status_code)

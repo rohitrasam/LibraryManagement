@@ -26,8 +26,8 @@ def get_user(request: Request):
         user = User.objects.get(email=email)
         if user.password != password:
             return Response("Wrong password", status=status.HTTP_404_NOT_FOUND)
+            
         user = UserModelSerializer(user)
-        # print(user)
         return Response(user.data, status=status.HTTP_200_OK)
     except:
         return Response('User not found', status=status.HTTP_404_NOT_FOUND)
