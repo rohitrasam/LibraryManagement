@@ -12,7 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card'
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { CreateComponent } from './components/create/create.component'
 
 
 
@@ -22,7 +23,8 @@ import { MatInputModule } from '@angular/material/input'
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateComponent
   ],
   imports: [
     FormsModule,

@@ -77,12 +77,12 @@ body {
             .login-button{
 
                 background-color: dodgerblue;;
-                @include onHover(rgb(63, 183, 20), aliceblue);
+                // @include onHover(rgb(63, 183, 20), aliceblue);
             }
 
             .register-button{
                 background-color: dodgerblue;
-                @include onHover(rgb(255, 183, 20), black)
+                // @include onHover(rgb(255, 183, 20), black)
             }
         // }
     }

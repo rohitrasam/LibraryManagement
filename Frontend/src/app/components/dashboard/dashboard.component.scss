@@ -1,0 +1,76 @@
+body{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.buttons {
+
+    display: flex;
+    flex-direction: row;
+    .create-container{
+        button{
+            background-color: dodgerblue;
+            color: white;
+        }
+    }
+    
+    .logout{
+        padding-left: 5px;
+        button{
+            background-color: red;
+            color: white;
+        }
+    }
+}
+
+.main-container{
+    width: 300px;
+    height: 380px;
+    padding: 50px 0 50px 0;
+    // margin: 10px
+
+    mat-card{
+        display: flex;   
+        flex-direction: column;
+    }
+
+    mat-card-header{
+        display: flex; 
+        flex-direction: column;
+        padding: 2px;
+
+        .description{
+            padding: 0 2px 2px 2px
+        }
+    }
+    
+    .image{
+        padding: 0 0 0 20px;
+        margin: 0;
+        img{
+            margin:0;
+        }
+    }
+
+    .price-container{
+        padding-top: 15px;
+        display: flex;
+        justify-content: space-between;
+        p{
+            margin:0;
+        }
+    }
+
+    .action-buttons{
+        
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        button{
+            background-color: dodgerblue
+        }
+    }
+}

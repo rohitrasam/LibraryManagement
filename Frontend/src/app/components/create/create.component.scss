@@ -3,12 +3,11 @@ $cancel: crimson;
 $submit: dodgerblue;
 
 body{
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: black;
+    // color: aliceblue;
 
     h1{
         padding: 50px 50px 0 50px;
@@ -16,7 +15,7 @@ body{
     }
 
     form{
-        color: black;
+        
         display: flex;
         flex-direction: column;
         padding: 50px
@@ -37,21 +36,21 @@ body{
     .buttons-container{
         display: flex;
         flex-direction: row;
-        justify-content: center;
 
         .cancel-container{
             padding-right: 30px;
             .cancel{
                 background-color: $cancel;
-                &:hover{
-                    background-color: $cancel;
-                    box-shadow: 0 0 20px $cancel;
-                }
+                // &:hover{
+                //     background-color: $cancel;
+                //     box-shadow: 0 0 20px $cancel;
+                // }
             }
         }
 
 
         .submit-container{
+            padding-right: 30px;
 
             .disabled {
                 background-color: $submit;

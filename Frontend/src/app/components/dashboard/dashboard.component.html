@@ -1,1 +1,50 @@
-<p>dashboard works!</p>
+<body>
+    <div class="'title">
+        <h1>
+            Hello {{name}}<br>
+            Welcome to Hifi Library
+        </h1>
+    </div>
+    <div class="buttons">
+        <div class="create-container">
+            <button (click)="gotoCreate()" mat-button>Add Book</button>
+        </div>
+        <div class="logout">
+            <button (click)="logout()" mat-button>Logout</button>
+        </div>
+    </div>
+    <div *ngFor="let book of books" class="main-container">
+        <mat-card>
+            <mat-card-header >
+                <div class="name">
+                    <mat-card-title>
+                        {{book.name}}
+                    </mat-card-title>
+                </div>
+                <div class="description">
+                    <mat-card-subtitle>
+                        {{book.description}}
+                    </mat-card-subtitle>
+                </div>
+            </mat-card-header>
+            <div class="image">
+                <img mat-card-image src={{book.image}} style="height: 200px; width: 200px">
+            </div>
+            <div class="price-container">
+                <p>
+                   Rs. {{book.price}}
+                </p>
+                <p> In stock: {{book.quantity}}</p>
+            </div>
+            <div class="action-buttons">
+                <mat-card-actions>
+                    
+                        <button class="update" (click)="gotoUpdate(book.id)" mat-button>Edit</button>
+                        <button class="delete" (click)="deleteBook(book.id)" mat-button>Delete</button>
+                </mat-card-actions>
+            </div>
+        </mat-card>
+
+    </div>
+
+</body>

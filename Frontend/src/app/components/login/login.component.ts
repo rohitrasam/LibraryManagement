@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
     const password = this.loginForm.value.password
     this.loginService.userLogin({'email': email, 'password': password}).subscribe(data => {  
       localStorage.setItem('data', String(data.id))
+      localStorage.setItem('name', data.name)
       this.authService.setToken(""+Math.random() * 1000 + 987987)
       this.route.navigate(['dashboard'])
     }, err => {
