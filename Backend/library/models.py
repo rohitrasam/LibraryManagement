@@ -25,6 +25,7 @@ class User(models.Model):
     def __str__(self):
         return f"{self.id}, {self.name}"
 
+
 class Book(models.Model):
     """
     A class to create a `Book` table in the DB.
@@ -38,7 +39,7 @@ class Book(models.Model):
         image (str): Stores image link of the book cover.
         quantity (int): Contains the number of books present in the Library.
     """
-    
+
     id = models.AutoField(primary_key=True, auto_created=True, editable=False)
     name = models.CharField(max_length=100, unique=True)
     author = models.CharField(max_length=100)
