@@ -7,6 +7,15 @@ from .models import User
 
 
 def add_user(request: Request):
+    """
+    A function to add users to the db.
+
+    Parameters:
+        request (Request): HTTP request that is sent from the frontend
+
+    Returns:
+        Response: HTTP response with the appropriate messasge and status code.
+    """
     try:
         if User.objects.filter(**request.data).exists():
             return Response("User already exists", status=status.HTTP_409_CONFLICT)
@@ -20,8 +29,16 @@ def add_user(request: Request):
 
 
 def get_user(request: Request):
+    """
+    A function to get users to the db based on the mail and password.
+
+    Parameters:
+        request (Request): HTTP request that is sent from the frontend
+
+    Returns:
+        Response: Returns user details if email and password matches else returns error message.
+    """
     try:
-        print(request)
         email = request.data['email']
         password = request.data['password']
         user = User.objects.get(email=email)

@@ -8,6 +8,17 @@ from library.serializers import BookSerializer
 from .models import Book
 
 def create_book(request: Request):
+    """
+    Function to add a book to the db.
+
+    Parameters:
+        request (Request): HTTP request that is sent from the frontend
+
+    Returns:
+        Response: Success response if the book is added successfully else an error 
+                  message with the respective status code.
+    """
+
     try:
         if Book.objects.filter(**request.data).exists():
             return Response("Book exists in the record", status=status.HTTP_409_CONFLICT)
@@ -20,6 +31,15 @@ def create_book(request: Request):
         return Response("Failed to enter details", status=status.HTTP_400_BAD_REQUEST)
     
 def get_all_books():
+    """
+    Function to get all the books from the db.
+
+    Parameters:
+        request (Request): HTTP request that is sent from the frontend
+
+    Returns:
+        Response: List of books else an error is returned.
+    """
     
     books = Book.objects.all()
 
@@ -29,6 +49,16 @@ def get_all_books():
     return Response(status=status.HTTP_404_NOT_FOUND)
 
 def get_book_info(id: int):
+    """
+    Function to get the details of a book.
+
+    Parameters:
+        id (int): The `id` of the particular book whose details are to be sent.
+
+    Returns:
+        Response: HTTP response with details of a book is it is present, else an error message is returned.
+    """
+
     try:
         book_data = Book.objects.get(id=id)
         if book_data:
@@ -38,6 +68,16 @@ def get_book_info(id: int):
         return Response('Book not found', status=status.HTTP_404_NOT_FOUND)
 
 def update_book_info(request: Request, id: int):
+    """
+    Function to update the book details.
+
+    Parameters:
+        request (Request): HTTP request that is sent from the frontend.
+        id (int): The `id` of the particular book whose details are to be updated.
+
+    Returns:
+        Response: HTTP response with the appropriate messasge and status code.
+    """
 
     try:
         book_data = Book.objects.get(id=id)
@@ -51,6 +91,16 @@ def update_book_info(request: Request, id: int):
         return Response('Failed to update book details', status=status.HTTP_400_BAD_REQUEST)
 
 def remove_book(id: int):
+    """
+    Function to delete a book frpm the db.
+
+    Parameters:
+        id (int): The `id` of that particular book that is to be deleted from the db.
+
+    Returns:
+        Response: HTTP response with the appropriate messasge and status code.
+    """
+    
     try:
         book = Book.objects.get(id=id)
         book.delete()
